@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body{
+  background-color: gray;
+}
+
+/* Fix for Add Notes Textarea Resize Issues */
+.notes-editor .ql-editor {
+  max-height: 400px;
+  min-height: 200px;
+  overflow-y: auto;
+  word-break: break-word; /* Prevents horizontal scroll for long words */
+  overflow-x: hidden;    /* Hides horizontal scrollbar */
+  color: #374151; /* Default dark gray text for light theme */
+}
+
+/* Dark theme text color for notes editor */
+.dark .notes-editor .ql-editor {
+  color: #f3f4f6; /* Light gray text for dark theme */
+}
+
+/* Style for links in notes content */
+.prose a {
+  color: #3b82f6 !important; /* Blue color for links */
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.prose a:hover {
+  color: #1d4ed8 !important; /* Darker blue on hover */
+}
+
+/* Theme-aware text colors for notes display */
+.prose {
+  color: #374151; /* Dark gray for light theme */
+}
+
+.dark .prose {
+  color: #f3f4f6; /* Light gray for dark theme */
+}
+
+/* Ensure proper contrast for various text elements in notes */
+.notes-editor .ql-editor p,
+.notes-editor .ql-editor div,
+.notes-editor .ql-editor span {
+  color: inherit; /* Inherit from parent .ql-editor */
+}
+
+/* Dark theme for various text elements in notes editor */
+.dark .notes-editor .ql-editor p,
+.dark .notes-editor .ql-editor div,
+.dark .notes-editor .ql-editor span {
+  color: inherit; /* Inherit from parent .ql-editor */
+}
+
+/* Better link colors for dark theme */
+.dark .prose a {
+  color: #60a5fa !important; /* Lighter blue for better contrast in dark theme */
+}
+
+.dark .prose a:hover {
+  color: #93c5fd !important; /* Even lighter blue on hover in dark theme */
+}
